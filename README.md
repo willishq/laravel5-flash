@@ -5,7 +5,11 @@ Inspired by [Laracasts Flash](https://github.com/laracasts/flash)
 
 ## Installation
 
-Coming soon...
+Install via composer:
+
+```
+composer require willishq/laravel5-flash
+```
 
 ## Usage
 
