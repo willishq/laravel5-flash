@@ -1,6 +1,7 @@
 <?php namespace Willishq\Flash;
 
 use Illuminate\Session\Store;
+use Illuminate\View\Factory;
 /**
  * Laravel 5 Flash messages inspired by Laracasts Flash Messages.
  *
@@ -35,14 +36,16 @@ class Flash {
 	 */
 	protected $exists = false;
 
-	public function __construct(Store $session) {
+	public function __construct(Store $session, Factory $view) {
 		$this->session = $session;
+		$view->share('flash', $this);
 		if ($this->session->has($this->namespace)) {
 			$flashed  = $this->session->get($this->namespace);
 			$this->message = $flashed['message'];
 			$this->title = $flashed['title'];
 			$this->type = $flashed['type'];
 			$this->exists = true;
+
 		}
 	}
 	/**

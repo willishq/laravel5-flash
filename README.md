@@ -22,7 +22,6 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Willishq\Flash\Flash;
-use Illuminate\View\Factory;
 
 abstract class Controller extends BaseController {
 
@@ -31,10 +30,9 @@ abstract class Controller extends BaseController {
 	 * @var Flash
 	 */
 	protected $flash;
-	public function __construct(Factory $view, Flash $flash)
+	public function __construct(Flash $flash)
 	{
 		$this->flash = $flash;
-		$view->share('flash', $flash);
 	}
 }
 ```
