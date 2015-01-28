@@ -1,0 +1,11 @@
+{
+	"name": "willishq/laravel5-flash",
+	"description": "Flash message management for Laravel 5.",
+	"keywords": ["laravel", "flash", "session"],
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Willishq\\Flash\\": "src/"
+		}
+	}
+}
